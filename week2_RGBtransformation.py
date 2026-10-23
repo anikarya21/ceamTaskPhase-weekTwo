@@ -1,0 +1,22 @@
+import cv2 as cv
+import numpy as np
+
+img = cv.imread('road.jpg')
+cv.imshow('ROAD',img)
+
+gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+cv.imshow('GRAY',gray)
+
+blur = cv.GaussianBlur(gray, [7,7], 0)
+cv.imshow('BLUR',blur)
+
+edge = cv.Canny(blur, 200, 255)
+cv.imshow('CANNY EDGE', edge)
+
+contours, hierarchy = cv.findContours(edge, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
+cv.drawContours(img, contours, -1, (0,0,255), 3)
+# cv.drawContours(hsv, contours, -1, (255,255,255), 3)
+cv.imshow('CONTOURS IMG', img)
+# cv.imshow('CONTOURS HSV', hsv)
+
+cv.waitKey(0)
