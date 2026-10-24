@@ -11,12 +11,13 @@ hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 cv.imshow('HSV',hsv)
 
 blur = cv.GaussianBlur(gray, (7,7), 0)
+cv.imshow('BLUR', blur)
 
 edge = cv.Canny(blur, 200, 255)
 cv.imshow('CANNY EDGE', edge)
 
-mask = cv.inRange(cv.GaussianBlur(hsv, (9,9), 0), np.array([0,0,120]), np.array([60,60,255]))
-result = cv.bitwise_or(img, img, mask=mask)
+mask = cv.inRange(cv.GaussianBlur(hsv, (9,9), 0), np.array([0,0,110]), np.array([60,60,200]))
+result = cv.bitwise_and(hsv, hsv, mask=mask)
 cv.imshow('MASKED', result)
 
 contours, hierarchy = cv.findContours(edge, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
