@@ -127,10 +127,14 @@ cv.imshow('FINAL MASKED', resultFinal)
 
 
 ### OTHER REFERENCES
-[README.md - Youtube](https://www.youtube.com/watch?v=jeOfS90Flf8)\
-[HSV Colorspace - Youtube](https://www.youtube.com/watch?v=VvTA-yHhtQ4)\
-[GRAYSCALE Transformation - Guide](https://medium.com/@niiicolai/digital-image-processing-grayscale-442461769fd2)\
-[CONTOURS Detection - Guide](https://www.educative.io/answers/edge-detection-vs-contour-detection-in-computer-vision)\
+[README.md - Youtube](https://www.youtube.com/watch?v=jeOfS90Flf8)
+
+[HSV Colorspace - Youtube](https://www.youtube.com/watch?v=VvTA-yHhtQ4)
+
+[GRAYSCALE Transformation - Guide](https://medium.com/@niiicolai/digital-image-processing-grayscale-442461769fd2)
+
+[CONTOURS Detection - Guide](https://www.educative.io/answers/edge-detection-vs-contour-detection-in-computer-vision)
+
 [RGB vs HSV - Guide](https://medium.com/@venkatpendela96/rgb-vs-hsv-52e55e504120)
 
 
