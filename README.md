@@ -22,7 +22,7 @@
 img = cv.imread('road.jpg')
 cv.imshow('ROAD',img)
 ```
-![Static road image](road.jpg)
+<img src='road.jpg' width=50% height=50%>
 
 <br>
 
@@ -31,7 +31,7 @@ cv.imshow('ROAD',img)
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 cv.imshow('HSV',hsv)
 ```
-![BGR to HSV](hsv.png)
+<img src='hsv.png' width=50% height=50%>
 
 <br>
 
@@ -40,7 +40,7 @@ cv.imshow('HSV',hsv)
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('GRAY',gray)
 ```
-![BGR to GRAY](gray.png)
+<img src='gray.png' width=50% height=50%>
 
 <br>
 
@@ -49,7 +49,7 @@ cv.imshow('GRAY',gray)
 blur = cv.GaussianBlur(gray, (7,7), 0)
 cv.imshow('BLUR', blur)
 ```
-![Gaussian Blur](blur.png)
+<img src='blur.png' width=50% height=50%>
 
 <br>
 
@@ -58,7 +58,7 @@ cv.imshow('BLUR', blur)
 edge = cv.Canny(blur, 200, 255)
 cv.imshow('CANNY EDGE', edge)
 ```
-![Edges Identified](edge.png)
+<img src='edge.png' width=50% height=50%>
 
 <br>
 
@@ -68,7 +68,7 @@ mask = cv.inRange(cv.GaussianBlur(hsv, (9,9), 0), np.array([0,0,110]), np.array(
 result = cv.bitwise_and(hsv, hsv, mask=mask)
 cv.imshow('MASKED', result)
 ```
-![Masked HSV](maskedHsv.png)
+<img src='maskedHsv.png' width=50% height=50%>
 
 <br>
 
@@ -78,7 +78,7 @@ contours, hierarchy = cv.findContours(edge, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE
 cv.drawContours(img, contours, -1, (0,0,255), 3)
 cv.imshow('CONTOURS IMG', img)
 ```
-![Contours drawn](contours.png)
+<img src='contours.png' width=50% height=50%>
 
 <br>
 
