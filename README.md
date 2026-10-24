@@ -34,3 +34,10 @@
 ## Contours Drawn on Image (BGR)
 ![Contours drawn](contours.png)
 
+### OTHER REFERENCES
+[README.md - Youtube](https://www.youtube.com/watch?v=jeOfS90Flf8)\
+[HSV Colorspace - Youtube](https://www.youtube.com/watch?v=VvTA-yHhtQ4)\
+[GRAYSCALE Transformation - Guide](https://medium.com/@niiicolai/digital-image-processing-grayscale-442461769fd2)\
+[CONTOURS Detection - Guide](https://www.educative.io/answers/edge-detection-vs-contour-detection-in-computer-vision)
+
+
