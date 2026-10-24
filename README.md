@@ -3,15 +3,15 @@
     This is for Ceam Task Phase - Week 2 assignments.
 
 ## Whole Pipeline
-    Load BGR static images
-    Convert BGR to HSV
-    Convert BGR to GRAY
-    Apply Gaussian Blur to GRAY and HSV
-    Apply Canny Edge Detection to GRAY
-    Mask layer of Gaussian Blur (HSV)
-    Mask the layer onto the image (HSV)
-    Contours of Canny Edge
-    Draw the Contours on the BGR image.
+    - Load BGR static images
+    - Convert BGR to HSV
+    - Convert BGR to GRAY
+    - Apply Gaussian Blur to GRAY and HSV
+    - Apply Canny Edge Detection to GRAY
+    - Mask layer of Gaussian Blur (HSV)
+    - Mask the layer onto the image (HSV)
+    - Contours of Canny Edge
+    - Draw the Contours on the BGR image.
 
 ## BGR Image
 ![Static road image](road.jpg)
