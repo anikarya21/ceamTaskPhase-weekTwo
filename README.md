@@ -1,4 +1,4 @@
-# TASK ceamTaskPhase-weekTwo
+# TASK ceamTaskPhase-weekTwo (Both BGR and HSV)
 
     This is for Ceam Task Phase - Week 2 assignments.
 
