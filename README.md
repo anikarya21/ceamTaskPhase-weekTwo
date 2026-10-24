@@ -41,52 +41,90 @@ cv.imshow('HSV',hsv)
 
 <br>
 
-### GRAY Image
+### SATURATION Image
 ```
-gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-cv.imshow('GRAY',gray)
+h,s,v = cv.split(hsv)
+cv.imshow('SATURATION',s)
+cv.imshow('VALUE',v)
 ```
-<img src='gray.png' width=25% height=25%>
+
+<img src ='saturation.png' width = 25% height = 25%>
 
 <br>
 
-### Gaussian Blur Image (GRAY)
+### VALUE Image
 ```
-blur = cv.GaussianBlur(gray, (7,7), 0)
-cv.imshow('BLUR', blur)
+h,s,v = cv.split(hsv)
+cv.imshow('SATURATION',s)
+cv.imshow('VALUE',v)
 ```
-<img src='blur.png' width=25% height=25%>
+
+<img src = 'value.png' width = 25% height = 25%>
 
 <br>
 
-### Canny Edge Detection (BGR)
+### Gaussian Blur of Value Image
 ```
-edge = cv.Canny(blur, 200, 255)
-cv.imshow('CANNY EDGE', edge)
+blurValue = cv.GaussianBlur(v, (7,7), 1)
+cv.imshow('BLUR VALUE', blurValue)
 ```
-<img src='edge.png' width=25% height=25%>
+
+<img src = 'gaussianBlurValue.png' width = 25% height = 25%>
 
 <br>
 
-### Masked Image (HSV) - Color Filters
+### Gaussian Blur of Saturation Image
 ```
-mask = cv.inRange(cv.GaussianBlur(hsv, (9,9), 0), np.array([0,0,110]), np.array([60,60,200]))
-result = cv.bitwise_and(hsv, hsv, mask=mask)
-cv.imshow('MASKED', result)
+blurSaturation = cv.GaussianBlur(s, (7,7), 1)
+cv.imshow('BLUR SATURATION', blurSaturation)
 ```
-<img src='maskedHsv.png' width=25% height=25%>
+
+<img src = 'gaussianBlurSaturation.png' width = 25% height = 25%>
 
 <br>
 
-### Contours Drawn on Image (BGR)
+### Canny Edge Detection Image (Using the Gaussian Blur of Value Image)
 ```
-contours, hierarchy = cv.findContours(edge, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
-cv.drawContours(img, contours, -1, (0,0,255), 3)
-cv.imshow('CONTOURS IMG', img)
+canny = cv.Canny(blurValue, 220, 255)
+cv.imshow('CANNY EDGE', canny)
 ```
-<img src='contours.png' width=25% height=25%>
+
+<img src = 'cannyEdgeValue.png' width = 25% height = 25%>
 
 <br>
+
+### Masked Image of HSV With Gaussian Blur of Value Image
+```
+maskValue = cv.inRange(blurValue, 180, 255)
+resultValue = cv.bitwise_and(hsv, hsv, mask=maskValue)
+cv.imshow('MASKED VALUE', resultValue)
+```
+
+<img src = 'maskValue.png' width = 25% height = 25%>
+
+<br>
+
+### Masked Image of HSV With Gaussian Blur of Saturation Image
+```
+maskSaturation = cv.inRange(blurSaturation, 0, 50)
+resultSaturation = cv.bitwise_and(hsv, hsv, mask=maskSaturation)
+cv.imshow('MASKED SATURATION', resultSaturation)
+```
+
+<img src = 'maskSaturation.png' width = 25% height = 25%>
+
+<br>
+
+### Final Bitwise Masked Image of Both Value and Saturation
+```
+resultFinal = cv.bitwise_and(resultValue, resultSaturation)
+cv.imshow('FINAL MASKED', resultFinal)
+```
+
+<img src = 'maskFinal.png' width = 25% height = 25%>
+
+<br>
+
 
 ### OTHER REFERENCES
 [README.md - Youtube](https://www.youtube.com/watch?v=jeOfS90Flf8)\

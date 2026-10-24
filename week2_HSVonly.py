@@ -8,27 +8,27 @@ hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 cv.imshow('HSV',hsv)
 
 h,s,v = cv.split(hsv)
-# cv.imshow('HUE',h)
-# cv.imshow('SATURATION',s)
-# cv.imshow('VALUE',v)
+cv.imshow('SATURATION',s)
+cv.imshow('VALUE',v)
 
-blur = cv.GaussianBlur(v, (7,7), 1) #Bilateral Filter is better
-cv.imshow('BLUR', blur)
+blurValue = cv.GaussianBlur(v, (7,7), 1) #Bilateral Filter is better
+cv.imshow('BLUR VALUE', blurValue)
 
-canny = cv.Canny(blur, 220, 255)
+canny = cv.Canny(blurValue, 220, 255)
 cv.imshow('CANNY EDGE', canny)
 
-blurSat = cv.GaussianBlur(s, (7,7), 1)
+blurSaturation = cv.GaussianBlur(s, (7,7), 1)
+cv.imshow('BLUR SATURATION', blurSaturation)
 
-mask = cv.inRange(blur, 180, 255)
-result = cv.bitwise_and(hsv, hsv, mask=mask)
-cv.imshow('MASKED', result)
+maskValue = cv.inRange(blurValue, 180, 255)
+resultValue = cv.bitwise_and(hsv, hsv, mask=maskValue)
+cv.imshow('MASKED VALUE', resultValue)
 
-maskSat = cv.inRange(blurSat, 0, 50)
-resultSat = cv.bitwise_and(hsv, hsv, mask=maskSat)
-cv.imshow('MASKED SATURATION', resultSat)
+maskSaturation = cv.inRange(blurSaturation, 0, 50)
+resultSaturation = cv.bitwise_and(hsv, hsv, mask=maskSaturation)
+cv.imshow('MASKED SATURATION', resultSaturation)
 
-resultmaskFinal = cv.bitwise_and(result, resultSat)
-cv.imshow('FINAL MASKED', resultmaskFinal)
+resultFinal = cv.bitwise_and(resultValue, resultSaturation)
+cv.imshow('FINAL MASKED', resultFinal)
 
 cv.waitKey(0)
