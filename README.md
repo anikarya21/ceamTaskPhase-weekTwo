@@ -1,4 +1,4 @@
-# TASK ceamTaskPhase-weekTwo (Both BGR and HSV)
+# TASK ceamTaskPhase-weekTwo (HSV Only)
 
     This is for Ceam Task Phase - Week 2 assignments.
 
@@ -9,19 +9,17 @@
 
     - Convert BGR to HSV
 
-    - Convert BGR to GRAY
-
-    - Apply Gaussian Blur to GRAY and HSV
-
-    - Apply Canny Edge Detection to GRAY
-
-    - Mask layer of Gaussian Blur (HSV)
-
-    - Mask the layer onto the image (HSV)
-
-    - Contours of Canny Edge
+    - Separate Hue, Saturation and Value from the HSV
     
-    - Draw the Contours on the BGR image.
+    - Apply Gaussian Blur to Value and Saturation
+
+    - Apply Canny Edge Detection to Gaussian Blur of Value.
+
+    - Mask Canny of Value with the HSV image.
+
+    - Mask Gaussian Blur of Saturation with the HSV image.
+
+    - Bitwise both of the masked images together
 
 <br>
 
